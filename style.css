@@ -1,121 +1,213 @@
-/* 全体の基本設定 */
+/* ===== 基本設定 ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background: #f7f7f7;
-  color: #222;
+  background: #f0ebe3;
+  color: #2a2520;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
                "Hiragino Sans", "游ゴシック体", YuGothic, "Meiryo", sans-serif;
   line-height: 1.9;
+  font-size: 16px;
 }
 
-/* 中央のコンテナ */
+/* ===== コンテナ ===== */
 .wrapper {
   max-width: 860px;
-  margin: 0 auto;
-  padding: 16px;
-  background: #ffffff;
-  box-shadow: 0 0 8px rgba(0,0,0,0.04);
+  margin: 32px auto;
+  background: #fffdf8;
+  border: 1px solid #d8d0c4;
+  border-radius: 2px;
+  box-shadow: 0 2px 12px rgba(60, 40, 20, 0.08);
+  overflow: hidden;
 }
 
-/* ヘッダー */
+/* ===== ヘッダー ===== */
 header {
-  border-bottom: 1px solid #e0e0e0;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
+  background: #2c3e50;
+  padding: 28px 32px 20px;
+  border-bottom: 3px solid #8b6914;
 }
 
 .site-title {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #f5f0e8;
+  letter-spacing: 0.04em;
 }
 
 .site-subtitle {
-  margin: 4px 0 0;
-  font-size: 0.95rem;
-  color: #666;
+  margin: 6px 0 0;
+  font-size: 0.88rem;
+  color: #b8c4cc;
+  letter-spacing: 0.02em;
 }
 
-/* ナビゲーション */
+/* ===== ナビゲーション ===== */
 nav {
-  margin-top: 12px;
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
 }
 
 nav a {
   display: inline-block;
-  margin-right: 14px;
-  font-size: 0.95rem;
-  color: #0066aa;
+  padding: 4px 12px;
+  font-size: 0.88rem;
+  color: #d0e0ea;
   text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 2px;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+  letter-spacing: 0.02em;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
-/* 見出し */
+/* ===== メインコンテンツ ===== */
+main {
+  padding: 32px 36px 36px;
+}
+
+/* ===== 見出し ===== */
 h1, h2, h3 {
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 0.03em;
 }
 
 h1 {
-  font-size: 1.4rem;
-  border-left: 4px solid #0066aa;
-  padding-left: 8px;
+  font-size: 1.35rem;
+  color: #2a2520;
   margin-top: 0;
+  margin-bottom: 1em;
+  padding: 8px 12px;
+  background: #f0ebe3;
+  border-left: 4px solid #8b6914;
+  border-radius: 0 2px 2px 0;
 }
 
 h2 {
-  font-size: 1.2rem;
-  margin-top: 1.8em;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 4px;
+  font-size: 1.15rem;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #d8d0c4;
+  color: #3a3028;
+  position: relative;
+}
+
+h2::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #8b6914;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  margin-bottom: 2px;
 }
 
 h3 {
-  font-size: 1.05rem;
-  margin-top: 1.2em;
+  font-size: 1.02rem;
+  margin-top: 1.4em;
+  margin-bottom: 0.4em;
+  color: #3a3028;
 }
 
-/* 段落など */
+/* ===== 段落・リスト ===== */
 p {
-  margin: 0.7em 0;
+  margin: 0.75em 0;
 }
 
 ul {
-  padding-left: 1.4em;
+  padding-left: 1.5em;
+  margin: 0.5em 0;
 }
 
-/* 画像 */
+li {
+  margin: 0.3em 0;
+}
+
+/* ===== リンク ===== */
+main a {
+  color: #2d5a8e;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(45, 90, 142, 0.3);
+  transition: color 0.15s, border-color 0.15s;
+}
+
+main a:hover {
+  color: #8b6914;
+  border-bottom-color: #8b6914;
+}
+
+/* ===== 画像 ===== */
 figure {
-  margin: 1.2em 0;
+  margin: 1.5em 0;
 }
 
 figure img {
   max-width: 100%;
   height: auto;
   display: block;
+  border: 1px solid #d8d0c4;
 }
 
 figure figcaption {
-  font-size: 0.85rem;
-  color: #666;
-  margin-top: 4px;
+  font-size: 0.84rem;
+  color: #7a6e64;
+  margin-top: 6px;
+  padding-left: 2px;
+  letter-spacing: 0.01em;
 }
 
-/* フッター */
+/* ===== フッター ===== */
 footer {
-  margin-top: 24px;
-  padding-top: 12px;
-  border-top: 1px solid #e0e0e0;
-  font-size: 0.85rem;
-  color: #777;
+  margin: 0;
+  padding: 14px 36px;
+  background: #f0ebe3;
+  border-top: 1px solid #d8d0c4;
+  font-size: 0.83rem;
+  color: #8a7e74;
+  letter-spacing: 0.01em;
 }
 
-/* スマホ向け微調整 */
+/* ===== スマホ対応 ===== */
 @media (max-width: 600px) {
   .wrapper {
-    padding: 12px;
+    margin: 0;
+    border: none;
     box-shadow: none;
+    border-radius: 0;
+  }
+
+  header {
+    padding: 20px 18px 16px;
+  }
+
+  .site-title {
+    font-size: 1.35rem;
+  }
+
+  main {
+    padding: 24px 18px 28px;
+  }
+
+  footer {
+    padding: 12px 18px;
+  }
+
+  nav {
+    gap: 6px;
   }
 }
